@@ -40,17 +40,19 @@
     height: 100%;
 }
 
-.navbar i {
+.credit-subcontainer i {
     font-size: 1rem;
 }
 
 #btn-mobile-menu {
-    width: 32px;
-    height: 32px;
     background: none;
     border: none;
     cursor: pointer;
     color: white;
+}
+
+#btn-mobile-menu i {
+    font-size: 2rem;
 }
 
 /* Se lo schermo è abbastanza grande, nasconde il tasto per il menu mobile */
