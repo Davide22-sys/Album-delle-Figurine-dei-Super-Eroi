@@ -16,10 +16,15 @@ h2 {
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    
 }
+
 body {
     justify-content: center;
     align-items: center;
     width: auto;
+}
+
+.logo {
+    margin-right: 20px;
+    height: 100px;
 }
