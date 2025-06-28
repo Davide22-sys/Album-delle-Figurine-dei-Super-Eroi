@@ -17,4 +17,16 @@ window.addEventListener("load", () => {
             window.location.href = "crediti.html";
         })
     }
+
+    const btnMobile = document.querySelector("#btn-mobile-menu");
+    const navSection = document.querySelector(".navbar > nav");
+    
+    btnMobile.addEventListener("click", () => {
+        // Mostra la navSection se era nascosta, nascondila se era visibile
+        if ( navSection.style.display === "none" ) {
+            navSection.style.display = "flex";
+            return;
+        }
+        navSection.style.display = "none";
+    });
 })
