@@ -25,6 +25,6 @@ body {
 }
 
 .logo {
-    margin-right: 20px;
     height: 100px;
+    filter: brightness(.1) sepia(100%) saturate(7500%) hue-rotate(356deg) brightness(40%) contrast(86%);
 }
