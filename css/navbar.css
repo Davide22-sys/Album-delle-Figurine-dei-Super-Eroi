@@ -33,6 +33,11 @@
 .navbar nav a:hover {
     color: #009dff;
 }
+
 .logo img {
     height: 100%;
+}
+
+.navbar i {
+    font-size: 1rem;
 }
