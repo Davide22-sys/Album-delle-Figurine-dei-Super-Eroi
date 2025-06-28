@@ -66,6 +66,7 @@
 @media (max-width: 720px) {
     .credit-container,
     .navbar nav {
-        display: none;
+        /* display: none; */
+        flex-direction: column;
     }
 }
