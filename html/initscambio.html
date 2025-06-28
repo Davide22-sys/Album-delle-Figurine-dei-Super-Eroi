@@ -19,32 +19,36 @@
   <script src="https://kit.fontawesome.com/a9b2079c05.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo"><a href="/html/album.html">
-          <img src="/img/logonavcrop.png" alt="logo">
-      </a></div>
-      <nav>
-        <a href="modifica.html">Profilo</a>
-        <a href="crediti.html">Acquista Crediti</a>
-        <a href="album.html">Album Figurine</a>
-        <a onclick="logout()">Logout</a>
-      </nav>
-      
-      <button id="btn-mobile-menu">
-          <i class="fa-solid fa-bars"></i>
-      </button>
-      
-      <div class="credit-container">
-        <div>Crediti disponibili:</div>
-        <div class="credit-subcontainer">
-          <i class="fa-solid fa-coins coin-icon"></i>
-          <div class="ncrediti"></div>
-          <i class="fa-solid fa-circle-plus buy-icon"></i>
+    <header>
+        <div class="navbar">
+            <div class="nav-section-left">
+                <div class="logo"><a href="/html/album.html">
+                    <img src="/img/logonavcrop.png" alt="logo">
+                </a></div>
+                
+                <button id="btn-mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav>
+                <a href="modifica.html">Profilo</a>
+                <a href="crediti.html">Acquista Crediti</a>
+                <a href="album.html">Album Figurine</a>
+
+                <a onclick="logout()">Logout</a>
+
+                <div class="credit-container">
+                    <div>Crediti disponibili:</div>
+                    <div class="credit-subcontainer">
+                        <i class="fa-solid fa-coins coin-icon"></i>
+                        <div class="ncrediti"></div>
+                        <i class="fa-solid fa-circle-plus buy-icon"></i> <!--icona + cliccabile con rimando-->
+                    </div>
+                </div>
+            </nav>
         </div>
-      </div>
-    </div>
-  </header>
+    </header>
 
   <main>
       <div class="scambi-container">
