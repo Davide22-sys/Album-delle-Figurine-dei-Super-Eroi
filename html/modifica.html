@@ -14,7 +14,38 @@
 
 </head>
 <body>
-    <div id="wrapper">
+        <header>
+        <div class="navbar">
+            <div class="nav-section-left">
+                <div class="logo"><a href="/html/album.html">
+                    <img src="/img/logonavcrop.png" alt="logo">
+                </a></div>
+                
+                <button id="btn-mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav>
+                <a href="modifica.html">Profilo</a>
+                <a href="crediti.html">Acquista Crediti</a>
+                <a href="album.html">Album Figurine</a>
+
+                <a onclick="logout()">Logout</a>
+
+                <div class="credit-container">
+                    <div>Crediti disponibili:</div>
+                    <div class="credit-subcontainer">
+                        <i class="fa-solid fa-coins coin-icon"></i>
+                        <div class="ncrediti"></div>
+                        <i class="fa-solid fa-circle-plus buy-icon"></i> <!--icona + cliccabile con rimando-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
         <h1>Album delle Figurine dei Super Eroi</h1>
         <h2>Modifica Profilo</h2>
         <form id="profile-form">
@@ -25,7 +56,7 @@
             <button class="form-item" id="save-btn" type="submit">Salva Modifiche</button>
         </form>
         <button class="form-item" id="delete-account-btn" type="button">Elimina Account</button>
-    </div>
+    </main>
 
     <script src="../js/isPasswordValid.js"></script>
     <script src="../js/modifica.js"></script>
