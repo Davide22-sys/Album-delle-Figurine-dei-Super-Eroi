@@ -76,7 +76,9 @@
     
     .credit-container,
     .navbar nav {
-        /* display: none; */
+        display: none;
         flex-direction: column;
+        text-align: center;
+        margin-top: 20px;
     }
 }
