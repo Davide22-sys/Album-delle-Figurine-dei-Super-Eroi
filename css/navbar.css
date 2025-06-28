@@ -55,6 +55,12 @@
     font-size: 2rem;
 }
 
+.nav-section-left {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 /* Se lo schermo è abbastanza grande, nasconde il tasto per il menu mobile */
 @media (min-width: 720px) {
     #btn-mobile-menu {
