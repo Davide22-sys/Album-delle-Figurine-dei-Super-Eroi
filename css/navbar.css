@@ -53,9 +53,17 @@
     color: white;
 }
 
-/* Se lo schermo è almeno 480px (o più), nasconde il tasto per il menu mobile */
+/* Se lo schermo è sopra i 480px, nasconde il tasto per il menu mobile */
 @media (min-width: 480px) {
     #btn-mobile-menu {
+        display: none;
+    }
+}
+
+/* Se lo schermo è sotto i 480px, nasconde le voci di menu (devono apparire solo se il tasto hamburger viene cliccato) */
+@media (max-width: 480px) {
+    .credit-container,
+    .navbar nav {
         display: none;
     }
 }
