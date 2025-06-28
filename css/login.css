@@ -24,8 +24,13 @@ body {
     width: auto;
 }
 
-.logo,
-.logo img {
-    height: 100px;
+.logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
     filter: brightness(.1) sepia(100%) saturate(7500%) hue-rotate(356deg) brightness(40%) contrast(86%);
+}
+
+.logo img {
+    height: 100%;
 }
