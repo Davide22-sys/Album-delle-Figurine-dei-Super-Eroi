@@ -43,3 +43,19 @@
 .navbar i {
     font-size: 1rem;
 }
+
+#btn-mobile-menu {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Se lo schermo è almeno 480px (o più), nasconde il tasto per il menu mobile */
+@media (min-width: 480px) {
+    #btn-mobile-menu {
+        display: none;
+    }
+}
