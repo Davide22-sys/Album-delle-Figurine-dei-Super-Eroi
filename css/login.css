@@ -24,7 +24,8 @@ body {
     width: auto;
 }
 
-.logo {
+.logo,
+.logo img {
     height: 100px;
     filter: brightness(.1) sepia(100%) saturate(7500%) hue-rotate(356deg) brightness(40%) contrast(86%);
 }
