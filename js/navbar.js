@@ -23,10 +23,10 @@ window.addEventListener("load", () => {
     
     btnMobile.addEventListener("click", () => {
         // Mostra la navSection se era nascosta, nascondila se era visibile
-        if ( navSection.style.display === "none" ) {
-            navSection.style.display = "flex";
+        if ( navSection.classList.contains("hidden") ) {
+            navSection.classList.remove("hidden");
             return;
         }
-        navSection.style.display = "none";
+        navSection.classList.add("hidden");
     });
 })
