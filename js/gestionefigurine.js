@@ -1,5 +1,5 @@
-const PUBLIC_KEY = "9de281f5f58435133e7b0803bf2727a2";
-const PRIVATE_KEY = "cf2a2657976eeb220c1a6a2a28e90100767bb137";
+const PUBLIC_KEY = "ebe1f427bbb120cb0eca213fa888587e";
+const PRIVATE_KEY = "967699a25fed716ddf5017d6812c63574d7b5289";
 function generateMarvelHash(ts, privateKey, publicKey) {
   return CryptoJS.MD5(ts + privateKey + publicKey).toString();
 }
