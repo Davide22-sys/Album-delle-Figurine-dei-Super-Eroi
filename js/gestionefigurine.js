@@ -1,5 +1,7 @@
 const PUBLIC_KEY = "ebe1f427bbb120cb0eca213fa888587e";
 const PRIVATE_KEY = "967699a25fed716ddf5017d6812c63574d7b5289";
+const SWITCH_TO_HARRY_POTTER = true
+
 function generateMarvelHash(ts, privateKey, publicKey) {
   return CryptoJS.MD5(ts + privateKey + publicKey).toString();
 }
@@ -61,9 +63,9 @@ async function eseguiAcquisto() {
     alert("Crediti insufficienti!");
     return;
   }
-  const limit = 437 //92; // Limite scelto per la chiamata API
+  const limit = SWITCH_TO_HARRY_POTTER ? 437 : 92; // Limite scelto per la chiamata API
   const offset = getRandomIntInclusive(0, 1472); 
-  const marvelUrl = "https://hp-api.onrender.com/api/characters" // `https://gateway.marvel.com/v1/public/characters?limit=${limit}&offset=${offset}&orderBy=modified&${getAuth()}`;
+  const marvelUrl = SWITCH_TO_HARRY_POTTER ? "https://hp-api.onrender.com/api/characters" : `https://gateway.marvel.com/v1/public/characters?limit=${limit}&offset=${offset}&orderBy=modified&${getAuth()}`;
   
   try {
     const response = await fetch(marvelUrl);
@@ -72,34 +74,41 @@ async function eseguiAcquisto() {
     }
   
     const responseJson = await response.json();
-    if (!responseJson?.data?.results?.length) {
+    if (
+      (SWITCH_TO_HARRY_POTTER && !responseJson.length) ||
+      (!SWITCH_TO_HARRY_POTTER && !responseJson?.data?.results?.length)
+    ) {
       throw new Error("Nessun personaggio trovato!");
     }    
     // Seleziona 5 figurine casuali dalle 92 ottenute
     const randomfigurines = [];
     for (let i = 0; i < 5; i++) {
       const figurineIndex = Math.floor(Math.random() * (limit - 1));
-      randomfigurines.push(responseJson.data.results[figurineIndex]);
+      randomfigurines.push(
+        SWITCH_TO_HARRY_POTTER ? responseJson[figurineIndex] : responseJson.data.results[figurineIndex]
+      );
     }
     const figurines = getCurrentUserItem("figurines");
     const nuoveFigurine = [];
-    for(let character of randomfigurines){
-      /*const responseComics= await fetch(`${character.comics.collectionURI}?${getAuth()}`);
-      if (!responseComics.ok) {
-        throw new Error(`Errore API Marvel: ${responseComics.statusText}`);
+    for (let character of randomfigurines) {
+      if (!SWITCH_TO_HARRY_POTTER) {
+        const responseComics = await fetch(`${character.comics.collectionURI}?${getAuth()}`);
+        if (!responseComics.ok) {
+          throw new Error(`Errore API Marvel: ${responseComics.statusText}`);
+        }
+        const responseJsonComics = await responseComics.json();
       }
-      const responseJsonComics = await responseComics.json();*/
       const nuovaFigurina = {
         name: character.name,
-        description: character.actor,//description,
-        image: character.image,//`${character.thumbnail.path}.${character.thumbnail.extension}`,
-        comics: []/*responseJsonComics.data.results.map(comic => {
+        description: SWITCH_TO_HARRY_POTTER ? character.actor : character.description,
+        image: SWITCH_TO_HARRY_POTTER ? character.image : `${character.thumbnail.path}.${character.thumbnail.extension}`,
+        comics: SWITCH_TO_HARRY_POTTER ? [] : responseJsonComics.data.results.map(comic => {
           return {
             title: comic.title,
             image: `${comic.thumbnail.path}.${comic.thumbnail.extension}`,
             series: comic.series.name
           }
-        })*/
+        })
       }
       figurines.push(nuovaFigurina);
       nuoveFigurine.push(nuovaFigurina);
