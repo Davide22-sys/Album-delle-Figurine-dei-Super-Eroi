@@ -5,18 +5,12 @@ body {
     font-family: sans-serif;
     background-image: url(../img/scambibkg.jpg);
 }
-/* Layout del container per i doppioni: posizionato tra navbar e footer */
+
 .scambi-container {
-    position: fixed;
-    top: 120px;
-    /* Altezza della navbar */
-    bottom: 50px;
-    /* Altezza del footer (regola se necessario) */
-    left: 0;
-    right: 0;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
+    margin-bottom: 50px;
 }
 
 /* Titolo della pagina */
