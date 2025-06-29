@@ -61,9 +61,9 @@ async function eseguiAcquisto() {
     alert("Crediti insufficienti!");
     return;
   }
-  const limit = 92; // Limite scelto per la chiamata API
+  const limit = 437 //92; // Limite scelto per la chiamata API
   const offset = getRandomIntInclusive(0, 1472); 
-  const marvelUrl = `https://gateway.marvel.com/v1/public/characters?limit=${limit}&offset=${offset}&orderBy=modified&${getAuth()}`;
+  const marvelUrl = "https://hp-api.onrender.com/api/characters" // `https://gateway.marvel.com/v1/public/characters?limit=${limit}&offset=${offset}&orderBy=modified&${getAuth()}`;
   
   try {
     const response = await fetch(marvelUrl);
@@ -84,22 +84,22 @@ async function eseguiAcquisto() {
     const figurines = getCurrentUserItem("figurines");
     const nuoveFigurine = [];
     for(let character of randomfigurines){
-      const responseComics= await fetch(`${character.comics.collectionURI}?${getAuth()}`);
+      /*const responseComics= await fetch(`${character.comics.collectionURI}?${getAuth()}`);
       if (!responseComics.ok) {
         throw new Error(`Errore API Marvel: ${responseComics.statusText}`);
       }
-      const responseJsonComics = await responseComics.json();
+      const responseJsonComics = await responseComics.json();*/
       const nuovaFigurina = {
         name: character.name,
-        description: character.description,
-        image: `${character.thumbnail.path}.${character.thumbnail.extension}`,
-        comics: responseJsonComics.data.results.map(comic => {
+        description: character.actor,//description,
+        image: character.image,//`${character.thumbnail.path}.${character.thumbnail.extension}`,
+        comics: []/*responseJsonComics.data.results.map(comic => {
           return {
             title: comic.title,
             image: `${comic.thumbnail.path}.${comic.thumbnail.extension}`,
             series: comic.series.name
           }
-        })
+        })*/
       }
       figurines.push(nuovaFigurina);
       nuoveFigurine.push(nuovaFigurina);
