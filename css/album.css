@@ -6,6 +6,7 @@
     box-sizing: border-box;
     background-color: #5a0f0a51;
     overflow-y: auto;  /* Abilita lo scrolling verticale se il contenuto supera lo spazio disponibile */
+    margin-bottom: 50px;
 }
 
 /* Layout a griglia per visualizzare esattamente 6 figurine per riga
