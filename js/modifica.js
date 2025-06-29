@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
             deleteCurrentUser()
             alert('Account eliminato con successo!');
             window.location.href = '../html/login.html'; // Reindirizza al login
+            return;
         }
+        alert("Azione non consentita");
     });
 });
