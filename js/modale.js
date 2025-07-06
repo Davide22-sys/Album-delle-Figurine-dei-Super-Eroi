@@ -59,13 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (typeof eseguiAcquisto === "function") {
                     btnConfermaAcquisto.style.display = "none";
                     loader.style.display = "block";
-                    return
+
                     const nuoveFigurine = await eseguiAcquisto();
                     loader.style.display = "none";
                     aggiornaAlbumInHtml(nuoveFigurine, "nuove-figurine");
                     modaleAcquistopack.dataset.figurineCaricate = "yes";
-
-
+                    
                 } else {
                     console.warn(
                         "eseguiAcquisto() non è definita. Assicurati che gestionefigurine.js sia caricato."
