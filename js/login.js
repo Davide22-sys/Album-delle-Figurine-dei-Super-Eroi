@@ -12,7 +12,6 @@ window.onload = function() {
 
     // Gestione del pulsante "Crea nuovo account"
     signupBtn.addEventListener("click", function() {
-        console.log("Pulsante 'Crea nuovo account' cliccato");
         window.location.href = "signup.html"; // Cambia il percorso
     });
 
