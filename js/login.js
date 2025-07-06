@@ -4,12 +4,6 @@ window.onload = function() {
     const passwordInput = document.getElementById("password");
     const signupBtn = document.getElementById("signup-btn");
 
-    // Controllo elementi esistenti
-    if (!loginForm || !emailInput || !passwordInput || !signupBtn) {
-        console.error("Uno o più elementi non trovati nel DOM.");
-        return;
-    }
-
     // Gestione del pulsante "Crea nuovo account"
     signupBtn.addEventListener("click", function() {
         window.location.href = "signup.html"; // Cambia il percorso
