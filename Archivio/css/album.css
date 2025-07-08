@@ -1,0 +1,60 @@
+/* Stile per l'album delle figurine */
+
+#wrapper {
+    background: #fff;
+    min-width: 360px;
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #71181f;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    background-color: #009dff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+#album {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.figurine-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.figurina {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.figurina img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#info {
+    margin-top: 20px;
+}
