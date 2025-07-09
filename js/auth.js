@@ -1,8 +1,11 @@
-function logout() {
-    if ( confirm("Sei sicuro di voler uscire?") ) {
-        localStorage.removeItem("currentUserIndex");
-        location.href = "login.html";
-    }
+function logout(askConfirmation = true) {
+    if (askConfirmation) {
+        if (!confirm("Sei sicuro di voler uscire?")) {
+            return; // Se l'utente non conferma, esce dalla funzione
+        }
+    } 
+    localStorage.removeItem("currentUserIndex");
+    location.href = "login.html";
 }
 function verificaAuth() {
     const currentUser = getCurrentUser(); //recupero dei dati dell'utente
