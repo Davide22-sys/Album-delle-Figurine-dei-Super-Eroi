@@ -1,6 +1,6 @@
 const PUBLIC_KEY = "ebe1f427bbb120cb0eca213fa888587e";
 const PRIVATE_KEY = "967699a25fed716ddf5017d6812c63574d7b5289";
-const SWITCH_TO_HARRY_POTTER = false
+const SWITCH_TO_HARRY_POTTER = true
 
 function generateMarvelHash(ts, privateKey, publicKey) {
   return CryptoJS.MD5(ts + privateKey + publicKey).toString();
