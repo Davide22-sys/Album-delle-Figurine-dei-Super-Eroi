@@ -70,6 +70,9 @@ document.addEventListener ("DOMContentLoaded", function(){
     scambiProposti.forEach((proposta, indexScambio) => {
 
         const nomeOfferenteScambio = proposta.offerenteScambio;
+        if (nomeOfferenteScambio === getCurrentUserItem("username")) {
+            return;
+        }
         const utenteOfferente = users.find(user => {
             return user.username === nomeOfferenteScambio;
         })
