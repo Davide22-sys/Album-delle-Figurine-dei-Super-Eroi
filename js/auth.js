@@ -11,7 +11,7 @@ function verificaAuth() {
     const currentUser = getCurrentUser(); //recupero dei dati dell'utente
     if (!currentUser) {
         alert("Devi essere registrato per accedere a questa pagina!");
-        logout();
+        logout(false);
         return false;
     }
     return true;
