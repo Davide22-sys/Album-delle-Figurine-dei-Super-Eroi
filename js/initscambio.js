@@ -35,7 +35,11 @@ document.addEventListener ("DOMContentLoaded", function(){
             return user.username === usernameInput.value;
         });
         if (userIndex === -1) {
-            alert ("Lo username digitato non è valido!");
+            alert("Lo username digitato non è valido!");
+            return;
+        }
+        if ( userIndex === getCurrentUserIndex() ) {
+            alert("Non puoi proporre uno scambio con te stesso!");
             return;
         }
         if (!users[userIndex]?.scambi) {
