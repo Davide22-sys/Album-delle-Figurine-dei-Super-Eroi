@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!auth){
         return; //terminiamo la funzione in anticipo perchè l'utente non è loggato
     }
-    // Correzione sintassi selector
     document.querySelectorAll(".package-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
         document.getElementById("custom-crediti").value =
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const creditiPreAcquisto = getCurrentUserItem("numberCredits")
         const newTotal = parseInt(creditiPreAcquisto) + numeroCreditiDaComprare;
 
-        // Correzione template literal (usa backticks ``)
         if (newTotal > maxCredits) {
             alert(`Superato il limite massimo di ${maxCredits} crediti!`);
             return;

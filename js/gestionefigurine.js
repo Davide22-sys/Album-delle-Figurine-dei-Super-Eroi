@@ -76,7 +76,7 @@ async function eseguiAcquisto() {
     const responseJson = await response.json();
     if (
       (SWITCH_TO_HARRY_POTTER && !responseJson.length) ||
-      (!SWITCH_TO_HARRY_POTTER && !responseJson?.data?.results?.length)
+      (!SWITCH_TO_HARRY_POTTER && !responseJson?.data?.results?.length) // ?. evita errori, è un operatore che permette di accedere a proprietà di oggetti che potrebbero essere null o undefined
     ) {
       throw new Error("Nessun personaggio trovato!");
     }    
